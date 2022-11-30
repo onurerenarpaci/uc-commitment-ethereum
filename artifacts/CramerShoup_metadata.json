@@ -1,0 +1,444 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint8",
+						"name": "b",
+						"type": "uint8"
+					}
+				],
+				"name": "CommitmentVerified",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32",
+								"name": "y",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "bytes32[2]",
+										"name": "u1",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "u2",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "e",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "v",
+										"type": "bytes32[2]"
+									}
+								],
+								"internalType": "struct ChiperText",
+								"name": "ct0",
+								"type": "tuple"
+							},
+							{
+								"components": [
+									{
+										"internalType": "bytes32[2]",
+										"name": "u1",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "u2",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "e",
+										"type": "bytes32[2]"
+									},
+									{
+										"internalType": "bytes32[2]",
+										"name": "v",
+										"type": "bytes32[2]"
+									}
+								],
+								"internalType": "struct ChiperText",
+								"name": "ct1",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct Commitment",
+						"name": "_com",
+						"type": "tuple"
+					}
+				],
+				"name": "commit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "a",
+						"type": "bytes32[2]"
+					},
+					{
+						"internalType": "bytes32[2]",
+						"name": "b",
+						"type": "bytes32[2]"
+					}
+				],
+				"name": "ecAdd",
+				"outputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "result",
+						"type": "bytes32[2]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "g",
+						"type": "bytes32[2]"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "scalar",
+						"type": "bytes32"
+					}
+				],
+				"name": "ecMul",
+				"outputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "result",
+						"type": "bytes32[2]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "x",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pad",
+						"type": "uint256"
+					}
+				],
+				"name": "encode_x",
+				"outputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "",
+						"type": "bytes32[2]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "message",
+						"type": "bytes32[2]"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "k",
+						"type": "bytes32"
+					}
+				],
+				"name": "encrypt",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32[2]",
+								"name": "u1",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "u2",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "e",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "v",
+								"type": "bytes32[2]"
+							}
+						],
+						"internalType": "struct ChiperText",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[2]",
+						"name": "message",
+						"type": "bytes32[2]"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "k",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint8",
+						"name": "b",
+						"type": "uint8"
+					}
+				],
+				"name": "encryptAndCompare",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "base",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "e",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "m",
+						"type": "uint256"
+					}
+				],
+				"name": "expmod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "o",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "b",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "x",
+						"type": "bytes32"
+					}
+				],
+				"name": "f",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "result",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					}
+				],
+				"name": "legendre_p",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "b",
+						"type": "uint8"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "x",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "k",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "pad",
+						"type": "uint256"
+					}
+				],
+				"name": "reveal",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "bytes32[2]",
+								"name": "g1",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "g2",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "c",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "d",
+								"type": "bytes32[2]"
+							},
+							{
+								"internalType": "bytes32[2]",
+								"name": "h",
+								"type": "bytes32[2]"
+							}
+						],
+						"internalType": "struct PublicKey",
+						"name": "_pk",
+						"type": "tuple"
+					}
+				],
+				"name": "setPublicKey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
+					}
+				],
+				"name": "sqrt_p",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"cramer_shoup.sol": "CramerShoup"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"cramer_shoup.sol": {
+			"keccak256": "0x90a1e5b21fbbefefbcc6d4e2dfef26b1263699efb1792cc9306e5632e16e7b83",
+			"urls": [
+				"bzz-raw://f222c275b738983c29d170a18f2a5c25e04f342dfd0f5c5980745167d92d58a7",
+				"dweb:/ipfs/QmdwfemeuYFWAaxQKh7cK97TyJLPotw27UpTcB8PmRDqGX"
+			]
+		}
+	},
+	"version": 1
+}
